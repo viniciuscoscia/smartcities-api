@@ -46,4 +46,17 @@ public class GenericDAOImpl<T,K> implements GenericDAO<T, K>{
 		return em.createQuery("from " + clazz.getName(),clazz).getResultList();
 	}
 	
+	@Override
+    public void commit() throws Exception {
+        try {
+            em.getTransaction().begin();
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            if (em.getTransaction().isActive())
+                em.getTransaction().rollback();
+            e.printStackTrace();
+            throw new Exception("Erro no commit");
+        }
+    }
+	
 }

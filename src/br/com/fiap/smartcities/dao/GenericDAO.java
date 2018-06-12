@@ -14,4 +14,6 @@ public interface GenericDAO<T,K> {
 	
 	List<T> listar();
 	
+	void commit() throws Exception;
+	
 }
