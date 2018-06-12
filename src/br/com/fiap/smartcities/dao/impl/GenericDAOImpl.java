@@ -37,7 +37,7 @@ public class GenericDAOImpl<T,K> implements GenericDAO<T, K>{
 	public void remover(K chave) throws Exception {
 		T entidade = buscar(chave);
 		if (entidade == null) {
-			throw new Exception("Entidade n�o encontrada");
+			throw new Exception("Entidade não encontrada");
 		}
 		em.remove(entidade);
 	}

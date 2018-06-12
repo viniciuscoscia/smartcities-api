@@ -12,7 +12,7 @@
           </servlet-class>
     <init-param>
       <param-name>javax.ws.rs.Application </param-name>
-      <param-value>br.com.fiap.smartcities.config</param-value>
+      <param-value>br.com.fiap.smartcities.config.ServicesConfig</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>

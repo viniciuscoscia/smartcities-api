@@ -21,10 +21,10 @@ public class Teste {
 			em.persist(Usuario);
 			em.getTransaction().commit();
 		} catch (Exception e) {
+			e.printStackTrace();
 			if (em.getTransaction().isActive()) {
 				em.getTransaction().rollback();
 			}
-			e.printStackTrace();
 			System.out.println("Cadastro não realizado");
 		} finally {
 			em.close();
